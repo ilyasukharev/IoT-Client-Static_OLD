@@ -105,6 +105,7 @@ public class Controller implements Initializable {
         dataFile.setReadOnly();
         new FileLogger().writeLogs("IP-address and port saved to 'cacheData'");
     }
+    //example
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
