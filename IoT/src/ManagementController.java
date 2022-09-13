@@ -1,4 +1,3 @@
-import Windows.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +20,8 @@ public class ManagementController implements Initializable{
     @FXML private TextArea helpLabel;
     @FXML private Button closeHelpLblBtn;
 
+    private final static FileLogger log = new FileLogger();
+
 
     private final ModelData modelData = ModelData.getInstance();
 
@@ -29,7 +30,8 @@ public class ManagementController implements Initializable{
     private PngPathKeeper pngPathKeeper;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         model = modelData.getModel();
         pngPathKeeper = new PngPathKeeper();
     }
@@ -37,18 +39,22 @@ public class ManagementController implements Initializable{
     @FXML
     public void motorUpClicked() throws Exception{
         String state = model.writeMessage('u');
-        if (state.equals("MOTORUPOFF")){
+
+        if (state.equals("MOTORUPOFF"))
+        {
             motorUp.setImage(pngPathKeeper.getMotorUpPath(false));
             motorDown.setDisable(false);
         }
-        else if (state.equals("MOTORUPON")){
+        else if (state.equals("MOTORUPON"))
+        {
             motorUp.setImage(pngPathKeeper.getMotorUpPath(true));
             motorDown.setDisable(true);
         }
-        else if (state.equals("NOCONNECTION")){
+        else if (state.equals("NOCONNECTION"))
+        {
             reconnect();
         }
-        new FileLogger().writeLogs("Got and wrote state of IoT Element [Motor Up]");
+        log.writeLogs("Got and wrote state of IoT Element [Motor Up]");
     }
     @FXML
     public void motorDownClicked() throws Exception{
@@ -61,10 +67,11 @@ public class ManagementController implements Initializable{
             motorDown.setImage(pngPathKeeper.getMotorDownPath(true));
             motorUp.setDisable(true);
         }
-        else if (state.equals("NOCONNECTION")){
+        else if (state.equals("NOCONNECTION"))
+        {
             reconnect();
         }
-        new FileLogger().writeLogs("Got and wrote state of IoT Element [Motor Down]");
+        log.writeLogs("Got and wrote state of IoT Element [Motor Down]");
     }
     @FXML
     public void ledClicked() throws Exception{
@@ -78,7 +85,7 @@ public class ManagementController implements Initializable{
         else if (state.equals("NOCONNECTION")){
             reconnect();
         }
-        new FileLogger().writeLogs("Got and wrote state of IoT Element [LED]");
+        log.writeLogs("Got and wrote state of IoT Element [LED]");
     }
     @FXML
     public void autoModeClicked() throws Exception{
@@ -104,7 +111,7 @@ public class ManagementController implements Initializable{
         else if (state.equals("NOCONNECTION")){
             reconnect();
         }
-        new FileLogger().writeLogs("Got and wrote state of IoT Element [Auto Mode]");
+        log.writeLogs("Got and wrote state of IoT Element [Auto Mode]");
     }
 
     @FXML
@@ -119,53 +126,65 @@ public class ManagementController implements Initializable{
                 }
             }catch(Exception e){
                 System.out.println(e.getMessage());
-                new FileLogger().writeLogs("'Cache Data' file successfully cleared");
+                log.writeLogs("'Cache Data' file successfully cleared");
             }
     }
 
     @FXML
     public void reconnect(){
-        try{
+        try
+        {
             model.closeSocket();
-        }catch(Exception e){
+        }catch(Exception e)
+        {
             System.out.println(e.getMessage());
         }
+
         Stage stage = (Stage) motorUp.getScene().getWindow();
         stage.close();
-        try{
+
+        try
+        {
             Platform.runLater( () -> {
-                try {
+                try
+                {
                     new Main().start( new Stage() );
-                } catch (Exception e) {
+                } catch (Exception e)
+                {
                     throw new RuntimeException(e);
                 }
             });
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            new FileLogger().writeLogs(e.getMessage());
+        }catch(Exception e)
+        {
+            log.writeLogs(e.getMessage());
         }
     }
 
 
     @FXML
-    public void quitApp(){
-        try{
+    public void quitApp()
+    {
+        try
+        {
             model.closeSocket();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        }catch(Exception e)
+        {
+            log.writeLogs(e.getMessage());
         }
-        Stage stage = (Stage)motorUp.getScene().getWindow();
+        Stage stage = (Stage) motorUp.getScene().getWindow();
         stage.close();
     }
 
     @FXML
-    public void openHelpLabel(){
+    public void openHelpLabel()
+    {
         helpLabel.setOpacity(1.0);
         helpLabel.setDisable(false);
         closeHelpLblBtn.setOpacity(1.0);
     }
     @FXML
-    public void closeHelpLabel(){
+    public void closeHelpLabel()
+    {
         helpLabel.setOpacity(0.0);
         helpLabel.setDisable(true);
         closeHelpLblBtn.setOpacity(0.0);

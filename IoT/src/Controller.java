@@ -13,14 +13,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-enum SocketWarnings{
-    IOEXCEPTION,
-    IPADRESS,
-    SECURITY,
-    PORT,
-    SUCCESS,
-    NOCONNECTION
-}
+
 public class Controller implements Initializable {
 
     @FXML
@@ -31,60 +24,82 @@ public class Controller implements Initializable {
     private Button connectBtn;
     @FXML
     private CheckBox rememberBox;
+    private final static FileLogger log = new FileLogger();
 
     private File dataFile;
-    private Model model;
-    private final ModelData modelData = ModelData.getInstance();
+    private final static ModelData modelData = ModelData.getInstance();
 
     @FXML
-    public void connectToServer(javafx.event.ActionEvent actionEvent) throws IOException {
-        new FileLogger().writeLogs("Trying to connect the server");
+    public void connectToServer(javafx.event.ActionEvent actionEvent) throws IOException
+    {
+        log.writeLogs("Trying to connect the server");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         connectBtn.setDisable(true);
 
-        String ipAdress = ipField.getText();
+        String ip = ipField.getText();
         String port = portField.getText();
 
-        model = new Model(ipAdress, port);
-        modelData.setModel(model);
+        modelData.setModel(new Model(ip, port));
 
 
-        SocketWarnings warning = model.socketConnect();
-        if (warning == SocketWarnings.IOEXCEPTION) {
-            alert.setHeaderText("I/O Exceptions!");
-            new FileLogger().writeLogs("Connection to server failed. I/O Exceptions");
-        } else if (warning == SocketWarnings.IPADRESS) {
-            alert.setHeaderText("IP - address incorrect!");
-            new FileLogger().writeLogs("Connection to server failed. IP address is incorrect");
-        } else if (warning == SocketWarnings.PORT) {
-            alert.setHeaderText("Port incorrect!");
-            new FileLogger().writeLogs("Connection to server failed. Port is incorrect");
-        } else if (warning == SocketWarnings.NOCONNECTION) {
-            alert.setHeaderText("No internet connection!");
-            new FileLogger().writeLogs("Connection to server failed. No internet connection");
-        } else if (warning == SocketWarnings.SECURITY) {
-            alert.setHeaderText("Security exception!");
-            new FileLogger().writeLogs("Connection to server failed. Security exception");
-        } else if (warning == SocketWarnings.SUCCESS) {
-            alert.setHeaderText("Successfully connected!");
-            Stage stage = (Stage) connectBtn.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("Managment.fxml"));
-            stage.setTitle("Management");
-            Scene scene = new Scene(root, 1280, 720);
-            stage.setScene(scene);
-            stage.setResizable(false);
+        SocketWarnings warning = modelData.getModel().socketConnect();
 
-            new FileLogger().writeLogs("Successfully conected to: " + ipAdress + ":" + port);
+        switch (warning) {
+            case IOEXCEPTION ->
+            {
+                alert.setHeaderText("I/O Exceptions!");
+                log.writeLogs("Connection to server failed. I/O Exceptions");
+            }
+            case IPADRESS ->
+            {
+                alert.setHeaderText("IP - address incorrect!");
+                log.writeLogs("Connection to server failed. IP address is incorrect");
+            }
+            case PORT ->
+            {
+                alert.setHeaderText("Port incorrect!");
+                log.writeLogs("Connection to server failed. Port is incorrect");
+            }
+            case NOCONNECTION ->
+            {
+                alert.setHeaderText("No internet connection!");
+                log.writeLogs("Connection to server failed. No internet connection");
+            }
+            case SECURITY ->
+            {
+                alert.setHeaderText("Security exception!");
+                log.writeLogs("Connection to server failed. Security exception");
+                break;
+            }
+            case SUCCESS ->
+            {
+                alert.setHeaderText("Successfully connected!");
+                Stage stage = (Stage) connectBtn.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getResource("Managment.fxml"));
+                stage.setTitle("Management");
+                Scene scene = new Scene(root, 1280, 720);
+                stage.setScene(scene);
+                stage.setResizable(false);
+
+                log.writeLogs("Successfully conected to: " + ip + ":" + port);
+            }
+            default ->
+            {
+                log.writeLogs("Unknown state");
+            }
         }
+
+
         alert.setTitle("Socket connection");
-        alert.setContentText("The data of connection: IP - Address - " + ipAdress + "Port - " + port);
+        alert.setContentText("The data of connection: IP - Address - " + ip + "Port - " + port);
         alert.showAndWait();
         connectBtn.setDisable(false);
     }
 
     @FXML
-    public void rememberOn() {
+    public void rememberOn()
+    {
         dataFile = new File("cacheData");
         dataFile.setWritable(true);
 
@@ -103,12 +118,12 @@ public class Controller implements Initializable {
             System.out.println(exep.getMessage());
         }
         dataFile.setReadOnly();
-        new FileLogger().writeLogs("IP-address and port saved to 'cacheData'");
+        log.writeLogs("IP-address and port saved to 'cacheData'");
     }
-    //example
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         dataFile = new File("cacheData");
 
         try{
@@ -122,7 +137,8 @@ public class Controller implements Initializable {
             }
             reader.close();
 
-        }catch(IOException exception){
+        }catch(IOException exception)
+        {
             System.out.println(exception.getMessage());
         }
     }

@@ -4,42 +4,52 @@ import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class Model{
+public class Model
+{
+    private final static FileLogger log = new FileLogger();
     private Socket socket;
 
-    private String ipAddress;
-    private String port;
+    private final String ipAddress;
+    private final String port;
 
-    private BufferedReader inServer;
-    private BufferedWriter outServer;
 
-    public Model(String ipAddress, String port){
+    public Model(String ipAddress, String port)
+    {
         this.ipAddress = ipAddress;
         this.port = port;
     }
-    public SocketWarnings socketConnect(){
+    public SocketWarnings socketConnect()
+    {
         try {
             socket = new Socket(ipAddress, Integer.parseInt(port));
-            if (socket.isConnected()) {
+            if (socket.isConnected())
+            {
                 return SocketWarnings.SUCCESS;
-            } else {
+            } else
+            {
                 return SocketWarnings.NOCONNECTION;
             }
-        } catch (UnknownHostException exception) {
+        } catch (UnknownHostException exception)
+        {
             return SocketWarnings.IPADRESS;
-        } catch (IOException exception) {
+        } catch (IOException exception)
+        {
             return SocketWarnings.IOEXCEPTION;
-        } catch (SecurityException exception){
+        } catch (SecurityException exception)
+        {
             return SocketWarnings.SECURITY;
-        } catch (IllegalArgumentException exception) {
+        } catch (IllegalArgumentException exception)
+        {
             return SocketWarnings.PORT;
         }
     }
-    private boolean checkConnection(){
+    private boolean checkConnection()
+    {
         boolean stateOfConnection = false;
-        try{
-            outServer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            inServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        try
+        {
+            BufferedWriter outServer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            BufferedReader inServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
 
             outServer.write('1');
@@ -58,15 +68,16 @@ public class Model{
                 stateOfConnection = true;
             }
 
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            new FileLogger().writeLogs(e.getMessage());
+        } catch(Exception e)
+        {
+            log.writeLogs(e.getMessage());
         }
         return stateOfConnection;
     }
-    public String writeMessage(char message) throws Exception{
+    public String writeMessage(char message) throws Exception
+    {
         if (!checkConnection()) {
-            new FileLogger().writeLogs("Connection reset by peer.Reconnecting.");
+            log.writeLogs("Connection reset by peer.Reconnecting.");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Socket exception");
             alert.setContentText("You have no connection with server!");
@@ -74,32 +85,37 @@ public class Model{
 
             return "NOCONNECTION";
         }
-        outServer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        inServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        BufferedWriter outServer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        BufferedReader inServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
         outServer.write(message);
         outServer.flush();
 
         char[] buff = new char[30];
         inServer.read(buff);
-        String arrivedStr = "";
-        for (char sym : buff){
-            if (sym != 0){
-                arrivedStr += sym;
+        StringBuffer arrivedStr = new StringBuffer();
+        for (char sym : buff)
+        {
+            if (sym != 0)
+            {
+                arrivedStr.append(sym);
             }
         }
-        return arrivedStr;
+        return arrivedStr.toString();
     }
 
-    public void closeSocket() throws Exception{
-        if (socket.isConnected()){
+    public void closeSocket() throws Exception
+    {
+        if (socket.isConnected())
+        {
             socket.close();
-            new FileLogger().writeLogs("Socket forcibly closed");
+            log.writeLogs("Socket forcibly closed");
         }
     }
 }
 
-class ModelData{
+class ModelData
+{
     private final static ModelData instance = new ModelData();
     private Model model;
     private ModelData(){}
