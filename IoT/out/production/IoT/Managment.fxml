@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-image: url('resources/manback.jpg');" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagementController">
+   <children>
+      <GridPane layoutX="189.0" layoutY="92.0" prefHeight="484.0" prefWidth="882.0" style="-fx-background-image: url('resources/back2.jpg');">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="motorUp" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#motorUpClicked" pickOnBounds="true" preserveRatio="true" translateX="144.0">
+               <image>
+                  <Image url="@resources/motorUF.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="motorDown" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#motorDownClicked" pickOnBounds="true" preserveRatio="true" translateX="145.0" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@resources/motorDF.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="led" fitHeight="149.0" fitWidth="144.0" onMouseClicked="#ledClicked" pickOnBounds="true" preserveRatio="true" translateX="145.0" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@resources/ledF.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="autoMode" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#autoModeClicked" pickOnBounds="true" preserveRatio="true" translateX="145.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@resources/autoF.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <MenuBar prefHeight="25.0" prefWidth="1280.0" style="-fx-background-color: lightgray;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#clearCacheData" text="Clear Cache">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#reconnect" text="Reconnect">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#quitApp" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openHelpLabel" text="About">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="H" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="helpLabel" disable="true" editable="false" layoutX="70.0" layoutY="73.0" opacity="0.0" prefHeight="574.0" prefWidth="932.0" text=" Hello, ${USER}!&#10;&#10;We hope that you will enjoy of our app and make your lifes is better than it is!&#10;&#10;There is small guide which names &quot;How to use our platform&quot;:&#10;&#10;Server part&#10;1. Install the Arduino IDE to build the script from the root directory named &quot;script&quot;.&#10;2. You should open and write the Wi-Fi name and password in this script.&#10;3. After this click to '-&gt;' to build script into your ESP8266.&#10;4. All you need to do is waiting finish message like: &#10;                                                      &quot;Leaving.. Hard reseting via RTS pin...&quot;&#10;5. Than you can view at the router`s page a new connected device!&#10;&#10;Client part&#10;1. Start app.&#10;2. Write the IP-address and Port. Probably IP-address is dynamic changing address. &#10;If you want to see your current IP of the server. You can go back to the Arduino IDE&#10;and switch on the Serial Monitor. The server will send you into Serial Monitor&#10;your current IP-address.&#10;Or you can reserve static IP-Address in your router`s page.&#10;3. Click &quot;Connect&quot; -&gt; you will see a new window with your devices!&#10;4. MenuBar.&#10;          4.1. &quot;Clear Cache&quot; - Makes empty file 'logs.txt'.This file writes logs from user&#10;                 activity. &#10;          4.2. &quot;Reconnect&quot; - Reconnect the client app.&#10;          4.3. &quot;Close&quot; - Close the client app.&#10;          4.4. &quot;About&quot; - Window with text that will help you to understand our app. &#10;5. Client working.&#10;     1. If icon of element became orange color than this element is active.&#10;         If icon became gray color, that it means that this element is disabled.&#10;     2. Data package is IoT device control.&#10;    &#10;&#10;&#10;&#10;&#10;&#10;This app created by university team &quot;IoTprojectTeam&quot; from Russia,&#10;                                                                                  Velikiy Novgorod, NovGU.&#10;" translateX="95.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="closeHelpLblBtn" layoutX="998.0" layoutY="80.0" mnemonicParsing="false" onAction="#closeHelpLabel" opacity="0.0" style="-fx-background-color: lightgray;" text="Close it!" textAlignment="CENTER">
+         <font>
+            <Font name="Leelawadee UI Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
