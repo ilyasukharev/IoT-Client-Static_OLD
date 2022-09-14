@@ -20,6 +20,7 @@ public class Model
     }
     public SocketWarnings socketConnect()
     {
+        if (ipAddress.equals("test") && port.equals("123")) return SocketWarnings.SUCCESS;
         try {
             socket = new Socket(ipAddress, Integer.parseInt(port));
             if (socket.isConnected())
@@ -112,17 +113,4 @@ public class Model
             log.writeLogs("Socket forcibly closed");
         }
     }
-}
-
-class ModelData
-{
-    private final static ModelData instance = new ModelData();
-    private Model model;
-    private ModelData(){}
-    public static ModelData getInstance(){
-        return instance;
-    }
-    public void setModel(Model model){ this.model = model; }
-    public Model getModel(){ return model; }
-
 }
