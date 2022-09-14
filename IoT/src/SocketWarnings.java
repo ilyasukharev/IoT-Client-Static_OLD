@@ -1,4 +1,4 @@
-enum SocketWarnings{
+public enum SocketWarnings{
     IOEXCEPTION,
     IPADRESS,
     SECURITY,

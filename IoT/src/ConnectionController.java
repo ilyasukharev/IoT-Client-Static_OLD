@@ -14,19 +14,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class Controller implements Initializable {
+public class ConnectionController implements Initializable {
 
-    @FXML
-    private TextField ipField;
-    @FXML
-    private TextField portField;
-    @FXML
-    private Button connectBtn;
-    @FXML
-    private CheckBox rememberBox;
+    @FXML private TextField ipField;
+    @FXML private TextField portField;
+    @FXML private Button connectBtn;
+    @FXML private CheckBox rememberBox;
     private final static FileLogger log = new FileLogger();
-
-    private File dataFile;
     private final static ModelData modelData = ModelData.getInstance();
 
     @FXML
@@ -45,7 +39,8 @@ public class Controller implements Initializable {
 
         SocketWarnings warning = modelData.getModel().socketConnect();
 
-        switch (warning) {
+        switch (warning)
+        {
             case IOEXCEPTION ->
             {
                 alert.setHeaderText("I/O Exceptions!");
@@ -70,7 +65,6 @@ public class Controller implements Initializable {
             {
                 alert.setHeaderText("Security exception!");
                 log.writeLogs("Connection to server failed. Security exception");
-                break;
             }
             case SUCCESS ->
             {
@@ -84,10 +78,7 @@ public class Controller implements Initializable {
 
                 log.writeLogs("Successfully conected to: " + ip + ":" + port);
             }
-            default ->
-            {
-                log.writeLogs("Unknown state");
-            }
+            default -> log.writeLogs("Unknown state");
         }
 
 
@@ -100,33 +91,40 @@ public class Controller implements Initializable {
     @FXML
     public void rememberOn()
     {
-        dataFile = new File("cacheData");
+        File dataFile = new File("Cache.txt");
         dataFile.setWritable(true);
 
-        try {
+        try
+        {
             BufferedWriter writer = new BufferedWriter(new FileWriter(dataFile));
-            if (rememberBox.isSelected()) {
+            if (rememberBox.isSelected())
+            {
                 String ip = "IP:" + ipField.getText();
                 String port = "PORT:" + portField.getText();
                 writer.write(ip + "\n");
                 writer.write(port);
-            } else {
+            }
+            else
+            {
                 writer.write("");
             }
             writer.close();
-        } catch (IOException exep) {
-            System.out.println(exep.getMessage());
+            log.writeLogs("IP-address and port successfully saved to 'cacheData'");
+
+        } catch (IOException e)
+        {
+            log.writeLogs(e.getMessage());
         }
         dataFile.setReadOnly();
-        log.writeLogs("IP-address and port saved to 'cacheData'");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        dataFile = new File("cacheData");
+        File dataFile = new File("Cache.txt");
 
-        try{
+        try
+        {
             BufferedReader reader = new BufferedReader(new FileReader(dataFile));
             for (Object objLine : reader.lines().toArray())
             {
@@ -139,7 +137,7 @@ public class Controller implements Initializable {
 
         }catch(IOException exception)
         {
-            System.out.println(exception.getMessage());
+            log.writeLogs(exception.getMessage());
         }
     }
 
