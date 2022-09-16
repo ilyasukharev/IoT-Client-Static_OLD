@@ -1,45 +1,45 @@
 
-2022_09_14___16:25:11___Cannot invoke "java.net.Socket.getOutputStream()" because "this.socket" is null
-2022_09_14___16:25:11___Connection reset by peer.Reconnecting.
-2022_09_14___16:25:13___Got and wrote state of IoT Element [Auto Mode]
-2022_09_14___16:25:19___IP-address and port saved to 'cacheData'
-2022_09_14___16:25:26___Trying to connect the server
-2022_09_14___16:25:27___Successfully conected to: test:123
-2022_09_14___16:25:34___IP-address and port saved to 'cacheData'
-2022_09_14___16:25:34___Trying to connect the server
-2022_09_14___16:25:34___Successfully conected to: test:123
-2022_09_14___16:25:37___Cannot invoke "java.net.Socket.isConnected()" because "this.socket" is null
-2022_09_14___16:29:40___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:29:42___Trying to connect the server
-2022_09_14___16:29:43___Successfully conected to: test:123
-2022_09_14___16:29:47___Cannot invoke "java.net.Socket.isConnected()" because "this.socket" is null
-2022_09_14___16:30:00___Trying to connect the server
-2022_09_14___16:30:01___Successfully conected to: test:123
-2022_09_14___16:30:07___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:30:08___Trying to connect the server
-2022_09_14___16:30:08___Successfully conected to: test:123
-2022_09_14___16:30:13___Cannot invoke "java.net.Socket.isConnected()" because "this.socket" is null
-2022_09_14___16:30:36___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:30:39___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:30:39___Trying to connect the server
-2022_09_14___16:30:39___Connection to server failed. Port is incorrect
-2022_09_14___16:30:42___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:30:42___Trying to connect the server
-2022_09_14___16:30:43___Successfully conected to: test:123
-2022_09_14___16:30:45___Cannot invoke "java.net.Socket.isConnected()" because "this.socket" is null
-2022_09_14___16:39:25___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:39:26___Trying to connect the server
-2022_09_14___16:40:12___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:40:13___Trying to connect the server
-2022_09_14___16:43:12___Trying to connect the server
-2022_09_14___16:43:57___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:43:58___Trying to connect the server
-2022_09_14___16:44:19___Connection to server failed. I/O Exceptions
-2022_09_14___16:44:23___Trying to connect the server
-2022_09_14___16:45:01___Trying to connect the server
-2022_09_14___16:45:23___Connection to server failed. I/O Exceptions
-2022_09_14___16:45:26___IP-address and port successfully saved to 'cacheData'
-2022_09_14___16:45:27___Trying to connect the server
-2022_09_14___16:45:27___Successfully conected to: test:123
-2022_09_14___16:47:24___Trying to connect the server
-2022_09_14___16:47:25___Successfully conected to: test:123
+2022_09_16___14:39:10___Connection reset by peer.Reconnecting.
+2022_09_16___14:39:11___Socket forcibly closed
+2022_09_16___14:39:11___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:32___IP-address and port successfully saved to 'cacheData'
+2022_09_16___14:43:33___Trying to connect the server
+2022_09_16___14:43:33___Successfully connected to: 192.168.0.103:80
+2022_09_16___14:43:36___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:37___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:38___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:39___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:40___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:41___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:41___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:41___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:42___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:42___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:43___Got and wrote state of IoT Element [Auto Mode]
+2022_09_16___14:43:44___Got and wrote state of IoT Element [Auto Mode]
+2022_09_16___14:43:46___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:46___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:47___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:47___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:49___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:49___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:54___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:54___Got and wrote state of IoT Element [Motor Down]
+2022_09_16___14:43:55___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:55___Got and wrote state of IoT Element [LED]
+2022_09_16___14:43:55___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:43:56___Got and wrote state of IoT Element [Motor Up]
+2022_09_16___14:44:02___Socket forcibly closed
+2022_09_16___14:58:12___Trying to connect the server
+2022_09_16___14:58:12___Successfully connected to: 192.168.0.103:80
+2022_09_16___14:58:16___Socket forcibly closed
+2022_09_16___15:01:09___IP-address and port successfully saved to 'cacheData'
+2022_09_16___15:01:11___Trying to connect the server
+2022_09_16___15:01:11___Successfully connected to: 192.168.0.103:80
+2022_09_16___15:35:04___Trying to connect the server
+2022_09_16___15:35:05___Successfully connected to: 192.168.0.103:80
+2022_09_16___15:35:08___Socket forcibly closed
+2022_09_16___15:35:13___Trying to connect the server
+2022_09_16___15:35:34___Connection to server failed. I/O Exceptions
+2022_09_16___15:48:39___Trying to connect the server
+2022_09_16___15:49:00___Connection to server failed. I/O Exceptions

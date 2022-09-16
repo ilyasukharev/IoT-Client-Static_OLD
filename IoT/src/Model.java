@@ -1,9 +1,12 @@
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
 public class Model
 {
     private final static FileLogger log = new FileLogger();
@@ -18,30 +21,67 @@ public class Model
         this.ipAddress = ipAddress;
         this.port = port;
     }
-    public SocketWarnings socketConnect()
+
+    private class Service extends javafx.concurrent.Service<SocketWarnings>
     {
-        if (ipAddress.equals("test") && port.equals("123")) return SocketWarnings.SUCCESS;
-        try {
-            socket = new Socket(ipAddress, Integer.parseInt(port));
-            if (socket.isConnected())
+        @Override
+        protected Task<SocketWarnings> createTask()
+        {
+            return new Task<>() {
+                @Override
+                protected SocketWarnings call(){
+                    try {
+                        socket = new Socket(ipAddress, Integer.parseInt(port));
+                        if (socket.isConnected())
+                        {
+                            return SocketWarnings.SUCCESS;
+                        } else
+                        {
+                            return SocketWarnings.NOCONNECTION;
+                        }
+                    } catch (UnknownHostException exception)
+                    {
+                        return SocketWarnings.IPADRESS;
+                    } catch (IOException exception)
+                    {
+                        return SocketWarnings.IOEXCEPTION;
+                    } catch (SecurityException exception)
+                    {
+                        return SocketWarnings.SECURITY;
+                    } catch (IllegalArgumentException exception)
+                    {
+                        return SocketWarnings.PORT;
+                    }
+                }
+            };
+        }
+    }
+
+    public void socketConnect(ConnectionController controller)
+    {
+        if (ipAddress.equals("test") && port.equals("123")) changeStage(controller, SocketWarnings.SUCCESS);
+
+        Service connectionService = new Service();
+
+        connectionService.setOnSucceeded(new EventHandler<WorkerStateEvent>()
+        {
+            @Override
+            public void handle(WorkerStateEvent workerStateEvent)
             {
-                return SocketWarnings.SUCCESS;
-            } else
-            {
-                return SocketWarnings.NOCONNECTION;
+                if (workerStateEvent.getSource().getValue() != null) changeStage(controller, (SocketWarnings) workerStateEvent.getSource().getValue());
             }
-        } catch (UnknownHostException exception)
+        });
+        connectionService.start();
+    }
+
+    private void changeStage(ConnectionController controller, SocketWarnings warning)
+    {
+        try
         {
-            return SocketWarnings.IPADRESS;
-        } catch (IOException exception)
+            controller.handleServerConnection(warning, ipAddress, port);
+        }catch(IOException e)
         {
-            return SocketWarnings.IOEXCEPTION;
-        } catch (SecurityException exception)
-        {
-            return SocketWarnings.SECURITY;
-        } catch (IllegalArgumentException exception)
-        {
-            return SocketWarnings.PORT;
+            log.writeLogs(e.getMessage());
         }
     }
     private boolean checkConnection()

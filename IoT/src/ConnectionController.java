@@ -1,3 +1,4 @@
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,7 +8,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.*;
 import java.net.URL;
@@ -20,24 +24,36 @@ public class ConnectionController implements Initializable {
     @FXML private TextField portField;
     @FXML private Button connectBtn;
     @FXML private CheckBox rememberBox;
+    @FXML private Circle circle;
     private final static FileLogger log = new FileLogger();
     private final static ModelData modelData = ModelData.getInstance();
+    private Positions positions;
+
+    private enum Positions
+    {
+        IP,
+        PORT,
+        REMEMBER,
+        CONNECT
+    }
 
     @FXML
-    public void connectToServer(javafx.event.ActionEvent actionEvent) throws IOException
+    public void connectToServer()
     {
         log.writeLogs("Trying to connect the server");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         connectBtn.setDisable(true);
+        rememberData(false);
 
         String ip = ipField.getText();
         String port = portField.getText();
 
         modelData.setModel(new Model(ip, port));
+        modelData.getModel().socketConnect(this);
+    }
 
-
-        SocketWarnings warning = modelData.getModel().socketConnect();
+    public void handleServerConnection(SocketWarnings warning, String ip, String port) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
         switch (warning)
         {
@@ -76,7 +92,7 @@ public class ConnectionController implements Initializable {
                 stage.setScene(scene);
                 stage.setResizable(false);
 
-                log.writeLogs("Successfully conected to: " + ip + ":" + port);
+                log.writeLogs("Successfully connected to: " + ip + ":" + port);
             }
             default -> log.writeLogs("Unknown state");
         }
@@ -88,39 +104,112 @@ public class ConnectionController implements Initializable {
         connectBtn.setDisable(false);
     }
 
-    @FXML
-    public void rememberOn()
-    {
-        File dataFile = new File("Cache.txt");
-        dataFile.setWritable(true);
+
+    private void rememberData(boolean clearAll){
 
         try
         {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(dataFile));
-            if (rememberBox.isSelected())
+            File file = new File("Cache.txt");
+            file.setWritable(true);
+
+            BufferedWriter out = new BufferedWriter(new FileWriter(file));
+
+            if (!clearAll)
             {
                 String ip = "IP:" + ipField.getText();
                 String port = "PORT:" + portField.getText();
-                writer.write(ip + "\n");
-                writer.write(port);
+                out.write(ip + "\n" + port);
             }
-            else
-            {
-                writer.write("");
-            }
-            writer.close();
-            log.writeLogs("IP-address and port successfully saved to 'cacheData'");
+            else  out.write("");
 
-        } catch (IOException e)
+            out.close();
+            file.setReadOnly();
+
+        }catch (IOException e)
         {
             log.writeLogs(e.getMessage());
         }
-        dataFile.setReadOnly();
+
+    }
+    @FXML
+    public void rememberOn()
+    {
+        rememberData(!rememberBox.isSelected());
+        log.writeLogs("IP-address and port successfully saved to 'cacheData'");
+    }
+
+    @FXML
+    public void ipMouseMoved()
+    {
+        if (!positions.equals(Positions.IP))
+        {
+            circleMovingHandler(-5.0);
+            positions = Positions.IP;
+        }
+    }
+
+    @FXML
+    public void commonMouseExited()
+    {
+        circle.setFill(Color.BLACK);
+        connectBtn.setStyle("-fx-text-fill: #f5f5f5; -fx-background-radius: 15; -fx-background-color: gray");
+    }
+
+    @FXML
+    public void ipAndPortTextChanged()
+    {
+        circle.setFill(Color.WHITE);
+    }
+
+    @FXML
+    public void rememberBoxMouseMoved()
+    {
+        if (!positions.equals(Positions.REMEMBER))
+        {
+            circleMovingHandler(175.0);
+            positions = Positions.REMEMBER;
+        }
+    }
+
+    @FXML
+    public void portMouseMoved()
+    {
+        if (!positions.equals(Positions.PORT))
+        {
+            circleMovingHandler(110.0);
+            positions = Positions.PORT;
+        }
+    }
+
+    @FXML
+    public void connectBtnMouseMoved()
+    {
+        if (!positions.equals(Positions.CONNECT))
+        {
+            circleMovingHandler(270.0);
+            positions = Positions.CONNECT;
+        }
+        connectBtn.setStyle("-fx-text-fill: #78150c; -fx-background-radius: 15; -fx-background-color: gray;");
+    }
+
+    private void circleMovingHandler(double y)
+    {
+        TranslateTransition transition = new TranslateTransition();
+        transition.setNode(circle);
+        transition.setDuration(Duration.millis(1500));
+        transition.setFromY(circle.getCenterY() + y);
+        transition.setByY(10.5);
+        transition.setAutoReverse(true);
+        transition.setCycleCount(TranslateTransition.INDEFINITE);
+        transition.play();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        circleMovingHandler(-5.0);
+        positions = Positions.IP;
+
         File dataFile = new File("Cache.txt");
 
         try
