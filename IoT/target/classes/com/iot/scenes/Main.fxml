@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-image: url('homeback.jpg');" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iot.controllers.MainController">
+   <children>
+      <VBox prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <HBox prefHeight="91.0" prefWidth="1280.0">
+               <children>
+                  <Button fx:id="homeMenuBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="184.0" style="-fx-background-color: #560262;" text="HOME" textFill="#b352bf">
+                     <font>
+                        <Font name="Montserrat Black" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#connectionScene" prefHeight="39.0" prefWidth="173.0" style="-fx-background-color: #560262;" text="CONNECT" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Black" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#serviceMainScene" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #560262;" text="SERVICE" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Black" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#contactScene" prefHeight="39.0" prefWidth="175.0" style="-fx-background-color: #560262;" text="CONTACT US" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Black" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label prefHeight="36.0" prefWidth="177.0" text="Novsu Team" textFill="#b352bf">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="370.0" right="1.0" top="25.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Montserrat Black" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="552.0" prefWidth="1280.0">
+               <children>
+                  <VBox prefHeight="544.0" prefWidth="683.0">
+                     <children>
+                        <Label prefHeight="158.0" prefWidth="682.0" text="IOT " textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="92.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="135.0" prefWidth="683.0" text="HOME SERVICE" textFill="#b352bf">
+                           <font>
+                              <Font name="Montserrat Black" size="76.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="Have usefull and multitasking functionality for your usual day. " textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="Press the button to get a full immersion." textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Button fx:id="connectBtn" mnemonicParsing="false" onMouseClicked="#connectBtnPushed" onMouseExited="#exitedConnectBtn" onMouseMoved="#movedConnectBtn" style="-fx-background-color: #b352bf; -fx-text-fill: #ffffff;" text="CONNECT" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="270.0" top="50.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="220.0" top="25.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@/icon_github.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/icon_gmail.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

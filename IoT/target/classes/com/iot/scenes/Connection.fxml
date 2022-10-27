@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-image: url('mainback.jpg');" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iot.controllers.ConnectionController">
+   <children>
+      <VBox prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <HBox prefHeight="126.0" prefWidth="1280.0">
+               <children>
+                  <HBox prefHeight="91.0" prefWidth="1280.0">
+                     <children>
+                        <Button fx:id="homeMenuBtn" mnemonicParsing="false" onMouseClicked="#homeScene" prefHeight="39.0" prefWidth="184.0" style="-fx-background-color: #560262;" text="HOME" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="connectMenuBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="173.0" style="-fx-background-color: #560262;" text="CONNECT" textFill="#b352bf">
+                           <font>
+                              <Font name="Montserrat Black" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="serviceMenuBtn" mnemonicParsing="false" onMouseClicked="#serviceMainScene" prefHeight="39.0" prefWidth="178.0" style="-fx-background-color: #560262;" text="SERVICE" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="contactMenuBtn" mnemonicParsing="false" onMouseClicked="#contactScene" prefHeight="39.0" prefWidth="175.0" style="-fx-background-color: #560262;" text="CONTACT US" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label prefHeight="36.0" prefWidth="177.0" text="Novsu Team" textFill="#b352bf">
+                           <HBox.margin>
+                              <Insets bottom="1.0" left="370.0" right="1.0" top="25.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Montserrat Black" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="681.0" prefWidth="1280.0">
+               <children>
+                  <VBox prefHeight="544.0" prefWidth="683.0">
+                     <children>
+                        <Label prefHeight="158.0" prefWidth="682.0" text="IOT " textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="92.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="135.0" prefWidth="683.0" text="Connection" textFill="#b352bf">
+                           <font>
+                              <Font name="Montserrat Black" size="76.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="You need to switch on the main plate to have a connection." textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="All you need are Esp8266 - controller and WiFi - network." textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="The main process - starting the server into your" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="WiFi - network. The secondary process - connecting to the " textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="server from this app." textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="39.0" prefWidth="683.0" text="That`s all are to give your a maximum recognize." textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Black" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="638.0" prefWidth="599.0">
+                     <children>
+                        <TextField fx:id="ipAddressField" maxWidth="352.0" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#ipAddressInput" onMouseClicked="#clearIpAddressField" prefHeight="64.0" prefWidth="348.0" style="-fx-background-color: #560262; -fx-background-radius: 15.0; -fx-text-fill: #FFFAFA;" text="IP-ADDRESS">
+                           <font>
+                              <Font name="Montserrat Regular" size="34.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="150.0" top="200.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="portField" maxWidth="351.0" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#portInput" onMouseClicked="#clearPortField" prefHeight="64.0" prefWidth="350.0" style="-fx-background-color: #560262; -fx-text-fill: #FFFAFA; -fx-background-radius: 15.0;" text="PORT">
+                           <font>
+                              <Font name="Montserrat Regular" size="34.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="150.0" top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="connectBtn" mnemonicParsing="false" onMouseClicked="#connectBtnClicked" onMouseExited="#exitedConnectBtn" onMouseMoved="#movedConnectBtn" prefHeight="47.0" prefWidth="128.0" style="-fx-background-radius: 15.0; -fx-background-color: #560262;" text="GET IT!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Montserrat Black" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="150.0" top="50.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <ImageView fx:id="loadingGifPng" fitHeight="45.0" fitWidth="41.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../loading.gif" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="180.0" top="63.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
