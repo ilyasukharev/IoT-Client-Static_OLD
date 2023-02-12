@@ -6,6 +6,8 @@ public enum ScenesNames
     CONNECTION,
     CONTACT,
     SERVICE,
+    INPUT,
+    RESET,
     ADVANCED_SERVICE,
     MAIN_SERVICE
 }

@@ -23,10 +23,13 @@ public class SceneChanger extends Application
         switch (name)
         {
             case MAIN ->                loader = new FXMLLoader(SceneChanger.class.getResource("Main.fxml"));
+            case SERVICE ->             loader = new FXMLLoader(SceneChanger.class.getResource("Service.fxml"));
             case CONNECTION ->          loader = new FXMLLoader(SceneChanger.class.getResource("Connection.fxml"));
             case CONTACT ->             loader = new FXMLLoader(SceneChanger.class.getResource("Contact.fxml"));
             case MAIN_SERVICE ->        loader = new FXMLLoader(SceneChanger.class.getResource("Service-Main.fxml"));
             case ADVANCED_SERVICE ->    loader = new FXMLLoader(SceneChanger.class.getResource("Service-Advanced.fxml"));
+            case INPUT ->               loader = new FXMLLoader(SceneChanger.class.getResource("Input.fxml"));
+            case RESET ->               loader = new FXMLLoader(SceneChanger.class.getResource("Reset.fxml"));
         }
 
         assert(loader != null);

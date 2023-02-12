@@ -63,7 +63,7 @@ public class MainController
     @FXML
     protected void serviceMainScene() throws Exception
     {
-        new SceneChanger(MAIN_SERVICE).start(getThisStage());
+        new SceneChanger(SERVICE).start(getThisStage());
     }
 
     @FXML
