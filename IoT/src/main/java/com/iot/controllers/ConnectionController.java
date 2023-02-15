@@ -1,5 +1,4 @@
 package com.iot.controllers;
-import com.iot.HttpClient.HttpClient;
 import com.iot.scenes.SceneChanger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,8 +12,7 @@ import static com.iot.scenes.ScenesNames.*;
 public class ConnectionController
 {
     @FXML
-    private Button registerBtn;
-
+    private Button contactMenuBtn;
     enum ButtonsStyle
     {
         ON
@@ -42,7 +40,7 @@ public class ConnectionController
     }
     private Stage getThisStage()
     {
-        return (Stage) registerBtn.getScene().getWindow();
+        return (Stage) contactMenuBtn.getScene().getWindow();
     }
     @FXML
     protected void register() throws Exception {

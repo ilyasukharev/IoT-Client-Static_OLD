@@ -1,5 +1,4 @@
 package com.iot.controllers;
-import com.iot.HttpClient.HttpClient;
 import com.iot.scenes.SceneChanger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +24,7 @@ public class InputController {
         new SceneChanger(MAIN).start(getThisStage());
     }
     @FXML
-    protected void confirmScene() throws Exception
+    protected void confirmPasswordScene() throws Exception
     {
         new SceneChanger(CONFIRM_PASSWORD).start(getThisStage());
     }
@@ -39,7 +38,7 @@ public class InputController {
     }
     @FXML
     protected void codeVerify() throws Exception {
-            confirmScene();
+        confirmPasswordScene();
     }
     @FXML
     protected void changePassword() throws Exception
@@ -57,12 +56,12 @@ public class InputController {
         new SceneChanger(MAIN).start(getThisStage());
     }
     @FXML
-    protected void passBtnReset() throws Exception
+    protected void passwordReset() throws Exception
     {
         new SceneChanger(RESET_PASSWORD).start(getThisStage());
     }
     @FXML
-    protected void registerBtnClicked() throws Exception
+    protected void registerClicked() throws Exception
     {
         new SceneChanger(CONNECTION).start(getThisStage());
     }

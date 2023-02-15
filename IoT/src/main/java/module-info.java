@@ -11,6 +11,4 @@ module com.iot.iot {
     exports com.iot;
     exports com.iot.controllers;
     opens com.iot.controllers to javafx.fxml;
-    exports com.iot.HttpClient;
-    opens com.iot.HttpClient to javafx.fxml;
 }

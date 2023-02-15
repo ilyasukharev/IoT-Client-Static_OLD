@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4dc3f6ed-9795-49ec-b317-36eedff932c4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_controls_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_controls_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/IoT.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/java/com/iot/HttpClient/HttpClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/java/com/iot/HttpClient/PostData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/java/com/iot/controllers/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/java/com/iot/controllers/ConnectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/java/com/iot/controllers/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/java/com/iot/controllers/InputController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/ConfirmPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/ConfirmPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Connection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Connection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Input.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Reset.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Reset.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/ResetPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/ResetPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Service.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/Service.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/authorization.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/src/main/resources/com/iot/scenes/authorization.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/HttpClient/HttpClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/HttpClient/PostData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController$ButtonsStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/ConnectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/controllers/InputController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Authorization.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Authorization.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/ConfirmPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/ConfirmPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Connection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Connection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Input.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Reset.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Reset.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/ResetPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/ResetPassword.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Service.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/com/iot/scenes/Service.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IoT/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/target/classes/module-info.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Ln9ReGwgZ8wksehZuYF7thIceK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.iot.Main" />
+      <module name="IoT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4dc3f6ed-9795-49ec-b317-36eedff932c4" name="Changes" comment="" />
+      <created>1676495976538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676495976538</updated>
+    </task>
+    <servers />
+  </component>
+</project>
