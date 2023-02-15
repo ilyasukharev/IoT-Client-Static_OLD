@@ -45,7 +45,7 @@
                                         <Insets top="25.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="register" mnemonicParsing="false" onMouseClicked="#registerBtnClicked" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: #F39C63; -fx-background-radius: 3; -fx-border-radius: 3;" text="REGISTER" textFill="WHITE">
+                                <Button fx:id="register" mnemonicParsing="false" onMouseClicked="#registerClicked" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: #F39C63; -fx-background-radius: 3; -fx-border-radius: 3;" text="REGISTER" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="18.0" />
                                     </font>
@@ -83,7 +83,7 @@
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Text>
-                        <Button fx:id="passwordReset" layoutX="582.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#passBtnReset" style="-fx-background-color: #F39C63;" text="PASSWORD RESET" textFill="WHITE">
+                        <Button fx:id="passwordReset" layoutX="582.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#foPassReset" style="-fx-background-color: #F39C63;" text="PASSWORD RESET" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>

@@ -13,7 +13,7 @@ import static com.iot.scenes.ScenesNames.*;
 public class ConnectionController
 {
     @FXML
-    private Button RegisterBtn;
+    private Button registerBtn;
 
     enum ButtonsStyle
     {
@@ -40,9 +40,9 @@ public class ConnectionController
     @FXML
     protected void sendPostEmailCodeVerify(){
     }
-    protected Stage getThisStage()
+    private Stage getThisStage()
     {
-        return (Stage) RegisterBtn.getScene().getWindow();
+        return (Stage) registerBtn.getScene().getWindow();
     }
     @FXML
     protected void register() throws Exception {

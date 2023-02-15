@@ -80,7 +80,7 @@
                         <Font size="61.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonRegister" layoutX="553.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: #F39C63; -fx-border-radius: 3; -fx-background-radius: 3;" text="register" textFill="WHITE">
+                  <Button fx:id="RegisterBtn" layoutX="553.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="49.0" prefWidth="173.0" style="-fx-background-color: #F39C63; -fx-border-radius: 3; -fx-background-radius: 3;" text="register" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -105,7 +105,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Text>
-                  <Text fx:id="telepfoneStatus" fill="#94f265" layoutX="563.0" layoutY="313.0" stroke="#252525" strokeMiterLimit="20.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="154.13671875">
+                  <Text fx:id="telephoneStatus" fill="#94f265" layoutX="563.0" layoutY="313.0" stroke="#252525" strokeMiterLimit="20.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="154.13671875">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

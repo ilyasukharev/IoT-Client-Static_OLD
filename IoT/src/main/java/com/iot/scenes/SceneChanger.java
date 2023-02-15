@@ -28,9 +28,9 @@ public class SceneChanger extends Application
             case CONTACT ->             loader = new FXMLLoader(SceneChanger.class.getResource("Contact.fxml"));
             case MAIN_SERVICE ->        loader = new FXMLLoader(SceneChanger.class.getResource("Service-Main.fxml"));
             case ADVANCED_SERVICE ->    loader = new FXMLLoader(SceneChanger.class.getResource("Service-Advanced.fxml"));
-            case AUTHORIZATION ->       loader = new FXMLLoader(SceneChanger.class.getResource("authorization.fxml"));
-            case RESET_PASSWORD ->               loader = new FXMLLoader(SceneChanger.class.getResource("ResetPassword.fxml"));
-            case CONFIRM ->             loader = new FXMLLoader(SceneChanger.class.getResource("ConfirmPassword.fxml"));
+            case AUTHORIZATION ->       loader = new FXMLLoader(SceneChanger.class.getResource("Authorization.fxml"));
+            case RESET_PASSWORD ->      loader = new FXMLLoader(SceneChanger.class.getResource("ResetPassword.fxml"));
+            case CONFIRM_PASSWORD ->    loader = new FXMLLoader(SceneChanger.class.getResource("ConfirmPassword.fxml"));
         }
 
         assert(loader != null);

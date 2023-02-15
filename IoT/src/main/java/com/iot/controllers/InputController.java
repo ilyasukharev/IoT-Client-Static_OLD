@@ -15,7 +15,7 @@ import static com.iot.scenes.ScenesNames.*;
 import static com.iot.scenes.ScenesNames.CONTACT;
 public class InputController {
     @FXML private Button contactMenuBtn;
-    protected Stage getThisStage()
+    private Stage getThisStage()
     {
         return (Stage) contactMenuBtn.getScene().getWindow();
     }
@@ -27,7 +27,7 @@ public class InputController {
     @FXML
     protected void confirmScene() throws Exception
     {
-        new SceneChanger(CONFIRM).start(getThisStage());
+        new SceneChanger(CONFIRM_PASSWORD).start(getThisStage());
     }
     @FXML
     protected void serviceMainScene() throws Exception
@@ -38,7 +38,7 @@ public class InputController {
     protected void sendCodeToEmail(){
     }
     @FXML
-    protected void okCodeVerify() throws Exception {
+    protected void codeVerify() throws Exception {
             confirmScene();
     }
     @FXML
@@ -54,15 +54,15 @@ public class InputController {
     @FXML
     protected void inputClicked() throws Exception
     {
-        new SceneChanger(MAIN_SERVICE).start(getThisStage());
+        new SceneChanger(MAIN).start(getThisStage());
     }
     @FXML
-    protected void foPassReset() throws Exception
+    protected void passBtnReset() throws Exception
     {
         new SceneChanger(RESET_PASSWORD).start(getThisStage());
     }
     @FXML
-    protected void registerClicked() throws Exception
+    protected void registerBtnClicked() throws Exception
     {
         new SceneChanger(CONNECTION).start(getThisStage());
     }
