@@ -1,9 +1,6 @@
 module com.iot.iot {
     requires javafx.controls;
     requires javafx.fxml;
-    requires json.simple;
-    requires org.apache.httpcomponents.httpclient;
-    requires org.apache.httpcomponents.httpcore;
     requires java.logging;
 
 

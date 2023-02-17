@@ -49,7 +49,6 @@ public class MainController
         else connectBtn.setText("CONNECT");
 
     }
-
     private Stage getThisStage()
     {
         return (Stage) homeMenuBtn.getScene().getWindow();
@@ -59,19 +58,6 @@ public class MainController
     {
         new SceneChanger(CONNECTION).start(getThisStage());
     }
-
-    @FXML
-    protected void serviceMainScene() throws Exception
-    {
-        new SceneChanger(SERVICE).start(getThisStage());
-    }
-
-    @FXML
-    protected void contactScene() throws Exception
-    {
-        new SceneChanger(CONTACT).start(getThisStage());
-    }
-
     @FXML
     protected void connectBtnPushed() throws Exception
     {

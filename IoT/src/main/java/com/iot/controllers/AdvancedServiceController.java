@@ -1,9 +1,11 @@
 package com.iot.controllers;
 
 import com.iot.model.DataKeeper;
+import com.iot.model.ServiceData;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 
 import static com.iot.controllers.AdvancedServiceController.ButtonsStyle.OFF;
 import static com.iot.controllers.AdvancedServiceController.ButtonsStyle.ON;
@@ -31,19 +33,41 @@ public class AdvancedServiceController extends Service
     }
     @FXML
     private Button serviceMenuBtn;
-
     @FXML private Label innerSensorField;
     @FXML private Label externalSensorField;
     @FXML private Label hollSensorField;
     @FXML private Button innerSensorBtn;
     @FXML private Button externalSensorBtn;
     @FXML private Button hollBtn;
+    @FXML private ToggleButton moveUpBtn;
+    @FXML private ToggleButton moveDownBtn;
+    @FXML private ToggleButton autoModeBtn;
+
 
     @FXML
     protected void initialize()
     {
         super.setStageBtn(serviceMenuBtn);
+
+        ServiceData data = DataKeeper.getServiceInstance();
+
+        if (data.getMoveUpState())
+        {
+            moveUpBtn.setStyle(MainServiceController.ButtonsStyle.ON.toString());
+            setMoveUpState(true);
+        }
+        if (data.getMoveDownState())
+        {
+            moveDownBtn.setStyle(MainServiceController.ButtonsStyle.ON.toString());
+            setMoveDownState(true);
+        }
+        if (data.getAutoModeState())
+        {
+            autoModeBtn.setStyle(MainServiceController.ButtonsStyle.ON.toString());
+            setAutoModeState(true);
+        }
     }
+
     @FXML protected void innerSensorBtnClicked()
     {
         if (DataKeeper.getInstance().getSocket() == null || !DataKeeper.getInstance().getSocket().isConnected()) getSocketException();

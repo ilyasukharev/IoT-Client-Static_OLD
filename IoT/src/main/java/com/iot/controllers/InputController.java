@@ -6,17 +6,35 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.json.simple.JSONObject;
 
 import java.io.IOException;
 
 import static com.iot.scenes.ScenesNames.*;
 import static com.iot.scenes.ScenesNames.CONTACT;
 public class InputController {
-    @FXML private Button contactMenuBtn;
+    @FXML private Button homeMenuBtn;
+    @FXML private Button sendCodeResetPasswordBtn;
+    @FXML private Button codeVerifyBtn;
+    @FXML private TextField codeResetPass;
     private Stage getThisStage()
     {
-        return (Stage) contactMenuBtn.getScene().getWindow();
+        return (Stage) homeMenuBtn.getScene().getWindow();
+    }
+    private void sleepTimer(Button btn){
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        new Thread(()->{
+            btn.setOpacity(1.0);
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            btn.setOpacity(0.5);
+        }).start();
     }
     @FXML
     protected void homeScene() throws Exception
@@ -34,7 +52,13 @@ public class InputController {
         new SceneChanger(MAIN_SERVICE).start(getThisStage());
     }
     @FXML
-    protected void sendCodeToEmail(){
+    protected void sendCodeToEmail() {
+        sleepTimer(sendCodeResetPasswordBtn);
+        codeResetPass.setOpacity(1.0);
+        codeVerifyBtn.setOpacity(1.0);
+        codeResetPass.setEditable(true);
+        codeVerifyBtn.setDisable(false);
+
     }
     @FXML
     protected void codeVerify() throws Exception {
@@ -53,7 +77,7 @@ public class InputController {
     @FXML
     protected void inputClicked() throws Exception
     {
-        new SceneChanger(MAIN).start(getThisStage());
+        new SceneChanger(MAIN_AUTHORIZATION).start(getThisStage());
     }
     @FXML
     protected void passwordReset() throws Exception

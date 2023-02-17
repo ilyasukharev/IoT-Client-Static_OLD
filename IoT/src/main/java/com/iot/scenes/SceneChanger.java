@@ -22,15 +22,18 @@ public class SceneChanger extends Application
         FXMLLoader loader = null;
         switch (name)
         {
-            case MAIN ->                loader = new FXMLLoader(SceneChanger.class.getResource("Main.fxml"));
-            case SERVICE ->             loader = new FXMLLoader(SceneChanger.class.getResource("Service.fxml"));
-            case CONNECTION ->          loader = new FXMLLoader(SceneChanger.class.getResource("Connection.fxml"));
-            case CONTACT ->             loader = new FXMLLoader(SceneChanger.class.getResource("Contact.fxml"));
-            case MAIN_SERVICE ->        loader = new FXMLLoader(SceneChanger.class.getResource("Service-Main.fxml"));
-            case ADVANCED_SERVICE ->    loader = new FXMLLoader(SceneChanger.class.getResource("Service-Advanced.fxml"));
-            case AUTHORIZATION ->       loader = new FXMLLoader(SceneChanger.class.getResource("Authorization.fxml"));
-            case RESET_PASSWORD ->      loader = new FXMLLoader(SceneChanger.class.getResource("ResetPassword.fxml"));
-            case CONFIRM_PASSWORD ->    loader = new FXMLLoader(SceneChanger.class.getResource("ConfirmPassword.fxml"));
+            case MAIN ->                    loader = new FXMLLoader(SceneChanger.class.getResource("Main.fxml"));
+            case SERVICE ->                 loader = new FXMLLoader(SceneChanger.class.getResource("Service.fxml"));
+            case CONNECTION ->              loader = new FXMLLoader(SceneChanger.class.getResource("Connection.fxml"));
+            case CONTACT ->                 loader = new FXMLLoader(SceneChanger.class.getResource("Contact.fxml"));
+            case MAIN_SERVICE ->            loader = new FXMLLoader(SceneChanger.class.getResource("Service-Main.fxml"));
+            case ADVANCED_SERVICE ->        loader = new FXMLLoader(SceneChanger.class.getResource("Service-Advanced.fxml"));
+            case AUTHORIZATION ->           loader = new FXMLLoader(SceneChanger.class.getResource("Authorization.fxml"));
+            case RESET_PASSWORD ->          loader = new FXMLLoader(SceneChanger.class.getResource("ResetPassword.fxml"));
+            case CONFIRM_PASSWORD ->        loader = new FXMLLoader(SceneChanger.class.getResource("ConfirmPassword.fxml"));
+            case MAIN_AUTHORIZATION ->      loader = new FXMLLoader(SceneChanger.class.getResource("MainAuthorization.fxml"));
+            case AUTHORIZATION_ADVANCED ->  loader = new FXMLLoader(SceneChanger.class.getResource("ServiceAuthorization-Advanced.fxml"));
+            case AUTHORIZATION_MAIN_SERVICE ->      loader = new FXMLLoader(SceneChanger.class.getResource("ServiceAuthorization-Main.fxml"));
         }
 
         assert(loader != null);

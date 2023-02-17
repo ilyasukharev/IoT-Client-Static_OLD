@@ -33,13 +33,6 @@ public class Service
         alert.setContentText("Socket isn`t connected or it`s equals null");
         alert.show();
 
-        try
-        {
-            connectionScene();
-        } catch (Exception e)
-        {
-            throw new RuntimeException(e);
-        }
     }
 
     private void saveButtonsState()
@@ -60,23 +53,22 @@ public class Service
     protected void homeScene() throws Exception
     {
         saveButtonsState();
-        new SceneChanger(MAIN).start(getThisStage());
+        new SceneChanger(MAIN_AUTHORIZATION).start(getThisStage());
     }
 
-    @FXML
-    protected void connectionScene() throws Exception
-    {
-        saveButtonsState();
-        new SceneChanger(CONNECTION).start(getThisStage());
-    }
+//    @FXML
+//    protected void connectionScene() throws Exception
+//    {
+//        saveButtonsState();
+//        new SceneChanger(CONNECTION).start(getThisStage());
+//    }
 
-    @FXML
-    protected void contactScene() throws Exception
-    {
-        saveButtonsState();
-        new SceneChanger(CONTACT).start(getThisStage());
-    }
-
+//    @FXML
+//    protected void contactScene() throws Exception
+//    {
+//        saveButtonsState();
+//        new SceneChanger(CONTACT).start(getThisStage());
+//    }
 
     @FXML
     protected void changeToAdvancedService() throws Exception
@@ -84,11 +76,22 @@ public class Service
         saveButtonsState();
         new SceneChanger(ADVANCED_SERVICE).start(getThisStage());
     }
+    @FXML
+    protected void changeToAdvancedServiceAuthorized() throws Exception
+    {
+        saveButtonsState();
+        new SceneChanger(AUTHORIZATION_ADVANCED).start(getThisStage());
+    }
 
     @FXML
     protected void changeToMainService() throws Exception
     {
         new SceneChanger(MAIN_SERVICE).start(getThisStage());
+    }
+    @FXML
+    protected void changeToMainServiceAuthorization() throws Exception
+    {
+        new SceneChanger(AUTHORIZATION_MAIN_SERVICE).start(getThisStage());
     }
 
     protected void setMoveUpState(boolean moveUpState)
